@@ -352,12 +352,7 @@ a:hover {
 .exchange-image {
   margin: 0px 10px !important;
 }
-.exchanges-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  justify-content: center;
-}
+
 .search-crypto {
   margin: 20px auto 30px auto;
   width: 250px;
