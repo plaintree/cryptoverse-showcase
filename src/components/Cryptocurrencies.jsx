@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { millify } from "millify";
+import { SpinnerDotted } from "spinners-react";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
-  const { data: cryptoList, error, isLoading } = useGetCryptosQuery(count);
+  const { data: cryptoList, isLoading } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptoList?.data?.coins);
   const [searchFields, setSearchFields] = useState("");
 
@@ -27,6 +28,11 @@ const Cryptocurrencies = ({ simplified }) => {
   if (isLoading) return "Loading...";
   return (
     <>
+      {isLoading && !simplified && (
+        <Row justify='center' align='middle'>
+          <SpinnerDotted color='#0071bd' />
+        </Row>
+      )}
       {!simplified && (
         <div className='search-crypto'>
           <Input placeholder='Search Cryptocurrency' onChange={handleChange} />
