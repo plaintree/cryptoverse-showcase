@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Menu, Typography, Avatar } from "antd";
+import { Button, Menu, Typography, Image } from "antd";
 import { Link } from "react-router-dom";
 import {
   HomeOutlined,
@@ -8,7 +8,7 @@ import {
   FundOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import icon from "../images/cryptocurrency.png";
+import logo from "../images/cryptoverse.png";
 
 const getItem = (label, key, icon, children, type) => {
   return {
@@ -55,20 +55,26 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
-  const handleClick = () => setActiveMenu(!activeMenu);
+  const handleClick = () => setActiveMenu((prevState) => !prevState);
 
   return (
     <div className='nav-container'>
       <div className='logo-container'>
-        <Avatar src={icon} size='large' />
-        <Typography.Title level={3} className='logo'>
-          <Link to='/'>Cryptoverse</Link>
-        </Typography.Title>
-        <Button className='menu-control-container' onClick={handleClick}>
-          <MenuOutlined />
+        <Image src={logo} width={200} />
+        <Button
+          type='text'
+          className='menu-control-container'
+          onClick={handleClick}>
+          <MenuOutlined style={{ color: "white" }} />
         </Button>
       </div>
-      {activeMenu && <Menu theme='dark' items={items} />}
+      {activeMenu && (
+        <Menu
+          items={items}
+          theme='dark'
+          style={{ backgroundColor: "#404040" }}
+        />
+      )}
     </div>
   );
 };
