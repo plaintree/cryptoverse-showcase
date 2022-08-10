@@ -33,8 +33,9 @@ const App = () => {
         <div className='footer'>
           <Typography.Title
             level={5}
-            style={{ color: "white", textAlign: "center" }}>
-            &copy; Cryptoverse <br />
+            style={{ color: "black", textAlign: "center" }}>
+            &copy; 2022 Cryptoverse.Inc by Ryan Lui
+            <br />
             All rights reserved
           </Typography.Title>
           <Space>

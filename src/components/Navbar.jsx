@@ -48,7 +48,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize < 768) {
+    if (screenSize < 500) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <div className='nav-container'>
       <div className='logo-container'>
-        <Image src={logo} width={200} />
+        <Image src={logo} width={150} preview={false} />
         <Button
           type='text'
           className='menu-control-container'

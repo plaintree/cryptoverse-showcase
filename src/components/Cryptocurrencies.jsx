@@ -23,7 +23,6 @@ const Cryptocurrencies = ({ simplified }) => {
     setSearchFields(event.target.value);
   };
 
-  // console.log(cryptos);
 
   if (isLoading) return "Loading...";
   return (
@@ -46,7 +45,7 @@ const Cryptocurrencies = ({ simplified }) => {
               <Card
                 title={`${crypto.rank}. ${crypto.name}`}
                 extra={
-                  <img className='crypto-image' src={crypto.iconUrl} alt='' />
+                  <img className='crypto-image' src={crypto.iconUrl} alt='coin icon' />
                 }
                 hoverable>
                 <p>Price: {millify(crypto.price)}</p>
